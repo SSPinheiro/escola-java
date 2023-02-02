@@ -13,6 +13,15 @@ public class Aluno {
 		this.genero = genero;
 		this.nome = nome;
 		this.dataDeNascimento = dataDeNascimento;
-		
 	}
+
+	public String getNome() {
+		return this.nome;
+	}
+	public int getMatricula( ) {
+		return this.matricula;
+	}
+	public String toString() {
+        return getMatricula()+ "-" + getNome();
+    }
 }
