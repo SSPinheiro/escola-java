@@ -26,7 +26,7 @@ public class Main {
 			}
 			switch (opcaoNumero) {
 			case 1:
-				System.out.println("Iniciando inclusão do aluno");
+				incluirAluno();
 				break;
 			case 2:
 				System.out.println("Abrindo listagem");
@@ -37,5 +37,8 @@ public class Main {
 		System.out.println("Até logo! Tenha um bom dia.");
 
 	}
-
+	public static void incluirAluno() {
+		System.out.println("Iniciando inclusão do aluno");
+		
+	}
 }
