@@ -34,7 +34,7 @@ public class Main {
 			}
 
 		} while (opcaoNumero > 0 && opcaoNumero < 4);
-		System.out.println("Até logo!");
+		System.out.println("Até logo! Tenha um bom dia.");
 
 	}
 
