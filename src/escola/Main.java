@@ -1,11 +1,16 @@
 package escola;
 
+import java.sql.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+
+		Repositorio repositorio = new Repositorio();
 		int opcaoNumero = 0;
+
 		System.out.println("Bem vindo ao programa Escola");
 		do {
 			System.out.println("");
@@ -26,10 +31,10 @@ public class Main {
 			}
 			switch (opcaoNumero) {
 			case 1:
-				incluirAluno();
+				incluir(repositorio);
 				break;
 			case 2:
-				System.out.println("Abrindo listagem");
+				listar(repositorio);
 				break;
 			}
 
@@ -37,8 +42,25 @@ public class Main {
 		System.out.println("Até logo! Tenha um bom dia.");
 
 	}
-	public static void incluirAluno() {
+
+	public static void incluir(Repositorio repositorio) {
 		System.out.println("Iniciando inclusão do aluno");
-		
+		Aluno aluno = new Aluno(123, Genero.MASCULINO, "Sam", Date.valueOf("2002-10-02"));
+		repositorio.incluir(aluno);
+
 	}
+
+	public static void listar(Repositorio repositorio) {
+		System.out.println("Iniciando a listagem de alunos");
+		List<Aluno> alunos = repositorio.getAlunos();
+		for (Aluno aluno : alunos) {
+			System.out.println("- " + aluno.getNome() + " " + aluno.getMatricula());
+		}
+		if (alunos.isEmpty() == true) {
+			System.out.println("A lista está vazia");
+
+		}
+
+	}
+
 }
